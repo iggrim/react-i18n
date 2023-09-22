@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-//import { routeConfig } from "router-config/routeConfig"; // ----второй вариант
-import { RoutePath } from "router-config/routeConfig";
+//import { routeConfig } from "config/routeConfig/routeConfig"; // ----второй вариант
+import { RoutePath } from "config/routeConfig/routeConfig";
 import { FC } from 'react';
 
 
