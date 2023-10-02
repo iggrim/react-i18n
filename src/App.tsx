@@ -10,21 +10,24 @@ import { useTranslation } from "react-i18next";
 function App() {
   const { t } = useTranslation();
   return (
-    <Suspense fallback="Загрузка...">
+    <>
       <div className="nav">
         <Link to={'/'}>{t("Главная")}</Link>
         <Link to={'/about'}>{t("О сайте")}</Link>
       </div>
+
+      <Suspense fallback="Загрузка...">
+        <Routes>
+          <Route path={'/about'} element={<AboutPage />} />
+          <Route path={'/'} element={<MainPage />} />
+          <Route path={'*'} element={<NotFoundPage />} />
+        </Routes>
+
+        <LangSwitcher />
+
+      </Suspense>
+    </>
       
-      <Routes>
-        <Route path={'/about'} element={<AboutPage />} />
-        <Route path={'/'} element={<MainPage />} />
-        <Route path={'*'} element={<NotFoundPage />} />
-      </Routes>
-
-      <LangSwitcher/>
-
-    </Suspense>
 
   );
 }
