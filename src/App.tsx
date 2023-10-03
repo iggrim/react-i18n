@@ -14,6 +14,7 @@ function App() {
       <div className="nav">
         <Link to={'/'}>{t("Главная")}</Link>
         <Link to={'/about'}>{t("О сайте")}</Link>
+        <LangSwitcher />
       </div>
 
       <Suspense fallback="Загрузка...">
@@ -22,13 +23,8 @@ function App() {
           <Route path={'/'} element={<MainPage />} />
           <Route path={'*'} element={<NotFoundPage />} />
         </Routes>
-
-        <LangSwitcher />
-
       </Suspense>
-    </>
-      
-
+    </>     
   );
 }
 
